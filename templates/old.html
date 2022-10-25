@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <div class="login">
+      <h1>Titanic Survival Prediction</h1>
+
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post">
+
+        <label for="pclass">Choose Pclass:</label>
+        <select name="pclass" id="pclass" type="number">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <br/>
+
+        <label for="sex">Choose Gender:</label>
+        <select name="sex" id="sex" type="text">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <br/>
+
+
+        <label for="age">Choose Age:</label>
+        <input
+          type="number"
+          name="age"
+          placeholder="age"
+          required="required"
+        /><br />
+
+        <label for="fare">Choose Fare:</label>
+        <input
+          type="number"
+          name="fare"
+          placeholder="fare"
+          required="required"
+        /><br />
+
+        <!-- <label for="block">Choose block:</label>
+        <input
+          type="text"
+          name="block"
+          placeholder="block"
+          required="required"
+        /><br /> -->
+
+        <label for="block">Choose Block:</label>
+        <select name="block" id="block" type="text"
+        name="block"
+        placeholder="fare"
+        required="required">
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+          <option>D</option>
+          <option>E</option>
+          <option>F</option>
+          <option>G</option>
+          <option>T</option>
+        </select>
+        <br/>
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Predict
+        </button>
+      </form>
+
+      <br />
+      <br />
+    </div>
+    {{prediction_no}}
+  </body>
+</html>
+
+
+

@@ -76,8 +76,8 @@ def predict():
     final_input = scaler.fit_transform(np.array(data).reshape(1,-1))
     print(final_input)
     output = xgb_model.predict(final_input)[0]
-    # survival = 'Survived' if output==1 else 'Not survived'
-    return render_template('home.html',prediction_no='The prediction of survival is {}'.format(output))
+    survival = 'Survived' if output==1 else 'not survived'
+    return render_template('home.html',prediction_no='This passeneger has {}'.format(survival))
     # return data
 
 if __name__=="__main__":
